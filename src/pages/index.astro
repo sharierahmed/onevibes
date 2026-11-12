@@ -1,0 +1,124 @@
+---
+import '../styles/site.css';
+const stories = [
+  { category: 'History', place: 'Strasbourg, 1518', title: 'The town that couldn’t stop dancing.', text: 'One woman started dancing in the street. Within weeks, dozens joined her. Five centuries later, we’re still trying to explain why.', detail: 'In July 1518, a dancing outbreak took hold in Strasbourg. Contemporary accounts describe people dancing for extended periods, and local authorities even arranged musicians and dancing spaces before changing course. The exact scale and cause remain disputed. Historian John Waller has argued that extreme stress and shared beliefs may help explain the event.', image: 'photo-1464822759023-fed622ff2c3b', alt: 'An atmospheric mountain landscape beneath a cloudy sky', source: 'https://www.britannica.com/event/dancing-plague-of-1518', credit: 'A story from the archives', time: '3 min' },
+  { category: 'Strange wars', place: 'Australia, 1932', title: 'The army went to war with birds. The birds won.', text: 'Machine guns, soldiers, and a very uncooperative flock of emus. Meet the Great Emu War.', detail: 'In 1932, Australian soldiers were sent to help farmers control emus damaging crops in Western Australia. The birds scattered into small groups and proved difficult to target. The military operation was eventually withdrawn, giving rise to the enduring nickname “the Great Emu War.” The birds did not literally fight a war, but the failed campaign became a remarkable piece of Australian history.', image: 'photo-1504173010664-32509aeebb62', alt: 'An emu with its distinctive long neck and feathers', source: 'https://www.nma.gov.au/defining-moments/resources/emu-war', time: '3 min' },
+  { category: 'Science', place: 'The natural world', title: 'Wombats make cubes. Yes, those kind of cubes.', text: 'Nature’s strangest geometry comes from an unlikely place. And scientists have worked out how.', detail: 'Wombats produce cube-shaped droppings. Research into the wombat intestine found that differences in tissue stiffness and muscular contractions help form the flat sides and corners. The work offers an unusual example of how soft biological tissue can create a geometric shape. Wombats use their droppings as scent markers.', image: 'photo-1459262838948-3e2de6c1ec80', alt: 'Wildlife resting among tree branches', source: 'https://www.bbc.com/news/world-australia-46258616', time: '2 min' },
+  { category: 'History', place: 'Boston, 1919', title: 'The day a wave of molasses swallowed a street.', text: 'A storage tank burst, sending a deadly wave of syrup through Boston’s North End.', detail: 'On January 15, 1919, a large molasses tank ruptured in Boston’s North End. The flood destroyed buildings, injured many people, and killed 21. The disaster led to a lengthy legal case and became an important episode in the history of industrial safety. Its unusual material sometimes overshadows the very real human cost.', image: 'photo-1519501025264-65ba15a82390', alt: 'Historic city buildings seen from above', source: 'https://www.britannica.com/event/Great-Molasses-Flood', time: '4 min' },
+  { category: 'Places', place: 'North Sea, 1967', title: 'A sea fort. A family. A self-declared country.', text: 'Six miles off the English coast, an abandoned fort became the Principality of Sealand.', detail: 'In 1967, Roy Bates occupied a former wartime sea fort and declared it the Principality of Sealand. The structure, known as Roughs Tower, stands off the coast of England. The Bates family created a flag, titles, and other symbols of statehood. Sealand is not recognized as a sovereign country by the United Nations.', image: 'photo-1518837695005-2083093ee35b', alt: 'Waves rolling across the open sea', source: 'https://www.britannica.com/place/Sealand', time: '3 min' },
+  { category: 'Art', place: 'London, 2018', title: 'Sold. And then the painting shredded itself.', text: 'When the auction hammer fell, Banksy’s artwork had one last surprise in its frame.', detail: 'Immediately after Girl with Balloon sold at Sotheby’s in October 2018, a hidden mechanism began shredding the canvas. It stopped partway through. The transformed work was renamed Love is in the Bin, and in 2021 it sold again for £18.6 million including fees. The stunt became part of the artwork’s story.', image: 'photo-1579783902614-a3fb3927b6a5', alt: 'A framed painting displayed in an art gallery', source: 'https://www.sothebys.com/en/articles/banksy-love-is-in-the-bin', time: '3 min' },
+  { category: 'Science', place: 'Indonesia, 1883', title: 'The sound that travelled across an ocean.', text: 'Krakatoa erupted. Nearly 4,800 kilometres away, people heard it.', detail: 'The catastrophic August 1883 eruption of Krakatoa generated enormous explosions and tsunamis. Reports of the sound came from Rodrigues Island in the Indian Ocean, roughly 4,800 kilometres away. Atmospheric pressure waves were recorded circling the globe. Much of the devastation came from the resulting tsunamis.', image: 'photo-1462331940025-496dfbfc7564', alt: 'A dramatic view of a distant nebula', source: 'https://www.britannica.com/place/Krakatoa', time: '4 min' },
+  { category: 'Places', place: 'Bangladesh', title: 'A beach that just keeps going.', text: 'Along the Bay of Bengal, Cox’s Bazar stretches for roughly 120 kilometres.', detail: 'Cox’s Bazar, on Bangladesh’s southeastern coast, is famous for its long stretch of sandy beach along the Bay of Bengal. It is often described as the world’s longest natural unbroken sea beach, though such rankings depend on how a beach is defined. Fishing communities, coastal landscapes, and tourism all shape the region.', image: 'photo-1473116763249-2faaef81ccda', alt: 'A broad sandy coastline beside the ocean', source: 'https://www.britannica.com/place/Coxs-Bazar', time: '2 min' },
+];
+const categories = ['All stories', 'History', 'Science', 'Strange wars', 'Places', 'Art'];
+const imageUrl = (id: string, width: number) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An independent collection of strange but true stories. Discover the history, science, places and people that make the world wonderfully weird." />
+    <meta name="theme-color" content="#f5f2e9" />
+    <meta property="og:title" content="Wait, What?! — Reality has a strange side." />
+    <meta property="og:description" content="A little history. A little science. A lot of wait, what? Discover extraordinary true stories." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <title>Wait, What?! — Strange, but true.</title>
+  </head>
+  <body>
+    <a href="#stories" class="skip-link">Skip to stories</a>
+    <div class="masthead-note"><span class="tiny-star">✳</span> AN INDEPENDENT JOURNAL FOR THE CURIOUS <span class="note-right">STRANGE, BUT TRUE.</span></div>
+    <header class="header wrap">
+      <a class="wordmark" href="/" aria-label="Wait, What?! Home">wait, what<span>?!</span><i class="brand-dot"></i></a>
+      <nav aria-label="Main navigation"><a href="#stories" class="nav-current">The stories</a><a href="#about">Our little corner</a><button class="surprise-link" id="surprise">Surprise me <span aria-hidden="true">↗</span></button></nav>
+      <a href="#search" class="search-jump" aria-label="Search stories"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></a>
+    </header>
+    <main>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-text"><div class="eyebrow"><span class="status-dot"></span> KEEP YOUR CURIOSITY ALIVE</div><h1 id="hero-title">Reality has a<br/><em>strange</em> side<span class="orange">.</span></h1><div class="hero-bottom"><p>Extraordinary stories. Actual events.<br/>For the part of you that still asks, “wait, what?”</p><a class="circle-link" href="#stories" aria-label="Explore the stories">↘</a></div></div>
+        <div class="hero-note"><span class="note-number">01 — ∞</span><svg viewBox="0 0 120 120" class="orbit" fill="none" stroke="currentColor" aria-hidden="true"><ellipse cx="60" cy="60" rx="53" ry="19" transform="rotate(-35 60 60)"/><ellipse cx="60" cy="60" rx="53" ry="19" transform="rotate(35 60 60)"/><ellipse cx="60" cy="60" rx="53" ry="19" transform="rotate(90 60 60)"/><circle cx="60" cy="60" r="6" fill="currentColor"/></svg><p>The world is weirder<br/>than you think.</p><span class="handwritten">Let’s get into it ↴</span></div>
+      </section>
+      <section class="featured wrap" aria-label="Editor's pick">
+        <a class="feature-image story-open" href="#story-0" data-index="0"><img src={imageUrl('photo-1470770841072-f978cf4d019e', 1400)} alt="An old European village nestled beneath dramatic mountains" width="1400" height="900" fetchpriority="high" /><span class="image-label">THE PAST IS A STRANGE PLACE</span><span class="photo-note">A glimpse of old Europe · illustrative photograph</span></a>
+        <div class="feature-copy"><div class="eyebrow"><span class="little-spark">✳</span> THE EDITOR’S PICK</div><div class="story-meta">HISTORY <span>·</span> STRASBOURG, 1518</div><h2><a href="#story-0" class="story-open" data-index="0">The town that<br/>couldn’t stop<br/><em>dancing.</em></a></h2><p>One woman started dancing in the street. Within weeks, dozens joined her. Five centuries later, we’re still trying to explain why.</p><div class="feature-footer"><a class="text-link story-open" href="#story-0" data-index="0">Read the strange story <span>↗</span></a><span class="read-time">3 MIN READ</span></div></div>
+      </section>
+      <div class="ticker" aria-hidden="true"><div>TRUTH IS STRANGER <span>✳</span> STAY CURIOUS <span>✳</span> NO FICTION NECESSARY <span>✳</span> REAL WORLD. WEIRD STORIES. <span>✳</span> TRUTH IS STRANGER <span>✳</span></div></div>
+      <section class="archive wrap" id="stories" aria-labelledby="archive-title">
+        <div class="section-heading"><div><div class="eyebrow">THE CURIOSITY CABINET</div><h2 id="archive-title">A good rabbit hole<br/>starts <em>here.</em></h2></div><label class="search-box" for="search"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><input type="search" id="search" placeholder="Find something strange…" aria-label="Search stories" /><kbd>/</kbd></label></div>
+        <div class="filter-row"><div class="filters" aria-label="Filter stories">{categories.map((category, i) => <button type="button" class:list={['filter', { active: i === 0 }]} data-category={category} aria-pressed={i === 0}>{category}{i === 0 && <span>08</span>}</button>)}</div><span class="archive-note">SMALL READS. BIG DOUBLE TAKES.</span></div>
+        <p class="results-status sr-only" aria-live="polite" id="results-status"></p>
+        <div class="story-grid">{stories.map((story, i) => <article class="story-card" data-category={story.category} data-search={`${story.title} ${story.category} ${story.place} ${story.text}`.toLowerCase()} hidden={i >= 6}>
+          <a href={`#story-${i}`} class="card-image story-open" data-index={i}><img src={imageUrl(story.image, 700)} alt={story.alt} loading="lazy" width="700" height="480"/><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <div class="card-meta"><span>{story.category}</span><span>{story.time} read</span></div><h3><a href={`#story-${i}`} class="story-open" data-index={i}>{story.title}</a></h3><p>{story.text}</p><div class="card-place">{story.place}<span>№ {String(i + 1).padStart(2, '0')}</span></div>
+        </article>)}</div>
+        <div id="empty" class="empty" hidden><h3>No rabbit holes here. Yet.</h3><p>Try another word or explore all stories.</p><button id="reset" class="outline-button">Clear filters ↗</button></div>
+        <div class="load-row"><button id="load-more" class="outline-button">A little more strange <span>↓</span></button><span id="story-count">6 OF 8 STORIES · AND COUNTING</span></div>
+      </section>
+      <section class="about wrap" id="about"><div class="about-symbol" aria-hidden="true">✳</div><div><div class="eyebrow">A LITTLE CORNER OF THE INTERNET</div><h2>Less doomscrolling.<br/><em>More double takes.</em></h2></div><div class="about-copy"><p>We collect the stories that make you pause, raise an eyebrow, and tell someone across the room.</p><p>History, science, and the beautifully bizarre world we live in. Short reads, with sources to follow your curiosity.</p><a class="text-link" href="#stories">Find your next rabbit hole <span>↗</span></a></div></section>
+    </main>
+    <footer class="wrap"><div class="footer-top"><a class="wordmark" href="/">wait, what<span>?!</span></a><p>A little history. A little science.<br/>A lot of “that actually happened?”</p><a href="#hero-title" class="back-top">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Wait, What?!</span><span>MADE FOR THE ENDLESSLY CURIOUS.</span><span>Strange, but true.</span></div></footer>
+    <dialog id="story-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><span class="eyebrow">YOUR DAILY DOUBLE TAKE</span><button id="close-dialog" aria-label="Close story">✕</button></div><div class="dialog-content"><span id="dialog-meta" class="story-meta"></span><h2 id="dialog-title"></h2><p id="dialog-intro" class="dialog-intro"></p><p id="dialog-body"></p><div class="source-note">Follow the rabbit hole <a id="dialog-source" target="_blank" rel="noopener noreferrer">Read the source ↗</a></div><div class="dialog-actions"><button class="outline-button" id="share-story">Share this story ↗</button><button class="text-link" id="another-story">One more strange story →</button></div><p id="share-status" role="status"></p></div></dialog>
+    <script define:vars={{ stories }}>
+      const cards = [...document.querySelectorAll('.story-card')];
+      const filters = [...document.querySelectorAll('.filter')];
+      const search = document.querySelector('#search');
+      const more = document.querySelector('#load-more');
+      const dialog = document.querySelector('#story-dialog');
+      let category = 'All stories';
+      let limit = 6;
+      let selected = 0;
+      function render() {
+        const query = search.value.trim().toLowerCase();
+        const matches = cards.filter(card => (category === 'All stories' || card.dataset.category === category) && card.dataset.search.includes(query));
+        cards.forEach(card => card.hidden = true);
+        matches.slice(0, limit).forEach(card => card.hidden = false);
+        more.hidden = matches.length <= limit;
+        document.querySelector('#empty').hidden = matches.length > 0;
+        document.querySelector('#story-count').textContent = `${Math.min(limit, matches.length)} OF ${matches.length} STORIES`;
+        document.querySelector('#results-status').textContent = `${matches.length} stories found`;
+        filters.forEach(button => { const active = button.dataset.category === category; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+      }
+      filters.forEach(button => button.addEventListener('click', () => { category = button.dataset.category; limit = 6; render(); }));
+      search.addEventListener('input', () => { limit = 6; render(); });
+      more.addEventListener('click', () => { limit += 6; render(); });
+      document.querySelector('#reset').addEventListener('click', () => { category = 'All stories'; search.value = ''; limit = 6; render(); search.focus(); });
+      function openStory(index) {
+        selected = index;
+        const story = stories[index];
+        document.querySelector('#dialog-meta').textContent = `${story.category} · ${story.place}`;
+        document.querySelector('#dialog-title').textContent = story.title;
+        document.querySelector('#dialog-intro').textContent = story.text;
+        document.querySelector('#dialog-body').textContent = story.detail;
+        document.querySelector('#dialog-source').href = story.source;
+        document.querySelector('#share-status').textContent = '';
+        if (!dialog.open) dialog.showModal();
+        document.body.classList.add('modal-open');
+        dialog.scrollTop = 0;
+      }
+      function syncHash() {
+        const match = location.hash.match(/^#story-(\d+)$/);
+        if (match && stories[Number(match[1])]) openStory(Number(match[1]));
+        else if (dialog.open) dialog.close();
+      }
+      document.querySelectorAll('.story-open').forEach(link => link.addEventListener('click', () => { if (location.hash === link.hash) openStory(Number(link.dataset.index)); }));
+      function randomStory() { const next = (selected + 1 + Math.floor(Math.random() * (stories.length - 1))) % stories.length; location.hash = `story-${next}`; }
+      document.querySelector('#surprise').addEventListener('click', randomStory);
+      document.querySelector('#another-story').addEventListener('click', randomStory);
+      document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+      dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (/^#story-\d+$/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search + '#stories'); });
+      document.querySelector('#share-story').addEventListener('click', async () => {
+        const status = document.querySelector('#share-status');
+        try {
+          if (navigator.share) await navigator.share({ title: stories[selected].title, url: location.href });
+          else { await navigator.clipboard.writeText(location.href); status.textContent = 'Story link copied. Pass the curiosity on.'; }
+        } catch (error) { if (error.name !== 'AbortError') status.textContent = `Copy the story link from your browser’s address bar to share it.`; }
+      });
+      document.addEventListener('keydown', event => { if (event.key === '/' && !dialog.open && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); search.focus(); } });
+      window.addEventListener('hashchange', syncHash);
+      syncHash();
+    </script>
+  </body>
+</html>
